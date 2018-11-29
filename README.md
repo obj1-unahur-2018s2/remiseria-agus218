@@ -58,7 +58,7 @@ A partir de esto, agregar lo que haga falta para poder preguntarle a una remiser
     Cada remisería establece un valor por kilómetro, y un mínimo para cada viaje.
     Por ejemplo, si una remisería establece 3 pesos por km y 30 de mínimo por viaje, entonces un viaje de 7 km lo paga 30  pesos (porque 3 x 7 = 21 no llega a 30), y un viaje de 25 km lo paga 75 pesos (3 x 25 = 75 supera el mínimo de 30).
 
-##Para una remisería resolver
+## Para una remisería resolver
 - dado un color, la cantidad de autos de ese color.
   P.ej. remiseriaCachito.cantidadDeAutosDeColor("rojo")
 - dada una cantidad de pasajeros, si hay o no al menos un auto que pueda llevar exactamente esa cantidad.

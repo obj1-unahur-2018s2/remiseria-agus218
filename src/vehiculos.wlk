@@ -1,8 +1,3 @@
-//
-//class Vehiculos {
-//
-//	
-//}
 
 class Corsa {
 	var property color = ""

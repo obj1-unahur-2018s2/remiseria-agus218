@@ -1,0 +1,67 @@
+import remiserias.*
+import vehiculos.*
+
+describe "Remiserias" {
+	const remi1 = new Remiseria()
+	const remi2 = new Remiseria()
+	
+	var cachito = new Corsa(color = "rojo")
+	var cor1 = new Corsa(color = "negro")
+	var cor2 = new Corsa(color = "verde")
+	var stan1 = new Standard(color = "gris", tanqueAdd = true )
+	var dis1 = new Distintos(capacidad=5 , velMax= 160, peso = 1200, color = "beige")
+	
+	var stan2 = new Standard(color = "verde", tanqueAdd = true )
+	var stan3 = new Standard(color = "gris", tanqueAdd= false)
+	var stan4 = new Standard(color = "verde", tanqueAdd = false)
+	var trafic
+	
+	
+	fixture{
+		
+		trafic.motor(motorBataton)
+		trafic.interior(interiorComodo)
+		
+		stan1.tanqueAdd()
+		stan2.tanqueAdd()
+		
+		remi1.agregarAFlota(cachito)
+		remi1.agregarAFlota(cor1)
+		remi1.agregarAFlota(cor2)
+		remi1.agregarAFlota(stan1)
+		remi1.agregarAFlota(dis1)
+		remi1.capacidadTotalYendoA(140)
+		
+		remi2.agregarAFlota(cachito)
+		remi2.agregarAFlota(stan2)
+		remi2.agregarAFlota(stan3)
+		remi2.agregarAFlota(stan4)
+		remi2.agregarAFlota(trafic)
+		remi2.capacidadTotalYendoA(140)
+		
+	}
+
+
+	test "peso total flotas" {
+
+		assert.equals(remi1.pesoTotalFlota(), 6450)
+		assert.equals(remi2.pesoTotalFlota(), 10250)
+
+	}
+	
+	test "flota recomendable" {
+		assert.that(remi1.esRecomendable())
+		assert.notThat(remi2.esRecomendable())
+		
+	}
+	
+	test "capacidad total yendo a 140" {
+		assert.equals(remi1.capacidadTotalYendoA(140), 17)
+		assert.equals(remi2.capacidadTotalYendoA(140), 4)
+	}
+	
+	test "color de auto mas rapido" {
+		assert.equals(remi1.colorDelAutoMasRapido(), "beige")
+		assert.equals(remi2.colorDelAutoMasRapido(), "rojo")
+	}
+}

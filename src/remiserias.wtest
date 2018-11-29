@@ -35,7 +35,7 @@ describe "Remiserias" {
 		remi2.agregarAFlota(stan2)
 		remi2.agregarAFlota(stan3)
 		remi2.agregarAFlota(stan4)
-//		remi2.agregarAFlota(traf1)
+		remi2.agregarAFlota(trafic)
 	}
 
 	test "remiseria 1 : cachito" {
@@ -103,17 +103,17 @@ describe "Remiserias" {
 	
 	test "test remiseria 2: stan4" {
 	
-		assert.equals(stan3.capacidad(), 4)
-		assert.equals(stan3.velMax(), 110)
-		assert.equals(stan3.peso(), 1200)
-		assert.equals(stan3.color(), "verde")
+		assert.equals(stan4.capacidad(), 4)
+		assert.equals(stan4.velMax(), 110)
+		assert.equals(stan4.peso(), 1200)
+		assert.equals(stan4.color(), "verde")
 		
 	}
 	test "test remiseria 2: trafic" {
 	
-//		assert.equals(stan3.capacidad(), 4)
-//		assert.equals(stan3.velMax(), 110)
-//		assert.equals(stan3.peso(), 1200)
+		assert.equals(trafic.capacidad(), 5)
+		assert.equals(trafic.velMax(), 80)
+		assert.equals(trafic.peso(), 5200)
 		assert.equals(trafic.color(), "blanco")
 		
 	}
