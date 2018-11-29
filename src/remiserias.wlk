@@ -3,6 +3,7 @@ import viajes.*
 class Remiseria {
 	
 	var property flota = []
+	var property viajesHechos = []
 	
 	method agregarAFlota(vehiculo) { flota.add(vehiculo) }
 	method quitarDeFlota(vehiculo) { flota.remove(vehiculo) }
@@ -24,6 +25,8 @@ class Remiseria {
 	}
 	
 	method registrarViaje(auto, remiseria) {}
+	
+	method viajesHechosAuto() { return flota.filter({ vehiculo => vehiculo.viajesHechos()}).size() }
 	
 	
 	/*
